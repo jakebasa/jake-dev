@@ -1,4 +1,10 @@
-import { filheimImg, eucorpImg, helprImg, dormhubImg } from '../assets';
+import {
+    filheimImg,
+    eucorpImg,
+    helprImg,
+    dormhubImg,
+    syCipImg,
+} from '../assets';
 
 interface Project {
     id: number;
@@ -40,6 +46,16 @@ export const projects: Project[] = [
     },
     {
         id: 3,
+        title: 'SyCip Builders',
+        description:
+            'A premium residential construction company website that showcases luxury home projects in Metro Manila. The site features elegant design and seamless user experience to highlight their bespoke designs and exceptional craftsmanship in boutique residential projects.',
+        image: syCipImg,
+        techStack: ['Webflow'],
+        githubUrl: 'no-link',
+        liveUrl: 'https://www.sycipbuilders.com/',
+    },
+    {
+        id: 4,
         title: 'Helpr',
         description:
             'A UI/UX prototype for a home service booking platform designed to connect homeowners with service providers. Features include service booking, provider profiles, and real-time scheduling.',
@@ -49,8 +65,9 @@ export const projects: Project[] = [
         liveUrl:
             'https://www.figma.com/proto/tUoxq4TePrwwkLeVzzk871/On-Demand-Home-Service-App?page-id=0%3A1&node-id=80-130&viewport=-1001%2C-302%2C0.5&t=A9oa4HRvZRaLQ1KA-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=80%3A129&show-proto-sidebar=1',
     },
+
     {
-        id: 4,
+        id: 5,
         title: 'Dormhub',
         description:
             'A web-based application designed to simplify dormitory operations such as room assignments and tenant management. Built with Node.js, Express, and React for efficient and modern management of dormitory facilities.',

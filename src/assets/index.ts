@@ -3,5 +3,6 @@ import eucorpImg from './eucorp.png';
 import helprImg from './helpr.png';
 import curvedArrow from './curved-arrow.svg';
 import dormhubImg from './dormhub.png';
+import syCipImg from './syCip.png';
 
-export { filheimImg, eucorpImg, helprImg, curvedArrow, dormhubImg };
+export { filheimImg, eucorpImg, helprImg, curvedArrow, dormhubImg, syCipImg };
