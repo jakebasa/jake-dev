@@ -2,11 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../../styles/theme';
 
-const CursorWrapper = styled.div`
+const CursorWrapper = styled.div<{ isVisible: boolean }>`
     pointer-events: none;
     position: fixed;
     inset: 0;
     z-index: 50;
+    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    transition: opacity 0.3s ease-out;
 
     @media (hover: none) and (pointer: coarse),
         (max-width: ${theme.breakpoints.sm}) {
@@ -35,16 +37,22 @@ const BorderCursor = styled.div<{ isHovering: boolean }>`
 `;
 
 export default function SmoothFollower() {
-    const mousePosition = useRef({ x: 0, y: 0 });
-    const dotPosition = useRef({ x: 0, y: 0 });
-    const borderDotPosition = useRef({ x: 0, y: 0 });
+    const initialPos =
+        typeof window !== 'undefined'
+            ? { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+            : { x: 0, y: 0 };
+
+    const mousePosition = useRef(initialPos);
+    const dotPosition = useRef(initialPos);
+    const borderDotPosition = useRef(initialPos);
 
     const [renderPos, setRenderPos] = useState({
-        dot: { x: 0, y: 0 },
-        border: { x: 0, y: 0 },
+        dot: initialPos,
+        border: initialPos,
     });
     const [isHovering, setIsHovering] = useState(false);
     const [isClicking, setIsClicking] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
 
     const DOT_SMOOTHNESS = 0.2;
     const BORDER_DOT_SMOOTHNESS = 0.1;
@@ -52,6 +60,7 @@ export default function SmoothFollower() {
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
             mousePosition.current = { x: e.clientX, y: e.clientY };
+            setIsVisible(true);
         };
 
         const handleMouseDown = () => setIsClicking(true);
@@ -132,7 +141,7 @@ export default function SmoothFollower() {
     if (typeof window === 'undefined') return null;
 
     return (
-        <CursorWrapper>
+        <CursorWrapper isVisible={isVisible}>
             <DotCursor
                 isClicking={isClicking}
                 style={{
