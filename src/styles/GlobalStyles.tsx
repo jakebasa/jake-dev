@@ -12,8 +12,10 @@ const globalStyles = css`
         box-sizing: border-box;
     }
 
-    * {
-        cursor: none !important;
+    @media (hover: hover) and (pointer: fine) {
+        * {
+            cursor: none !important;
+        }
     }
 
     html {
