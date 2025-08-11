@@ -229,12 +229,16 @@ const BackToTopButton = styled(motion.button)`
         right: 40px;
     }
 
+    /* Hide on mobile screens */
+    @media (max-width: ${theme.breakpoints.sm}) {
+        display: none;
+    }
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(246, 177, 122, 0.3);
     }
 `;
-
 const PageTitle = styled.h1`
     color: ${theme.colors.light};
     font-size: clamp(2rem, 5vw, 2.5rem);
