@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 import { ReactNode, useEffect } from 'react';
 import { theme } from '../../styles/theme';
 import { FloatingNav } from '../navigation/FloatingNav';
@@ -57,73 +56,73 @@ const LayoutWrapper = styled.div`
     }
 `;
 
-const Header = styled.header`
-    background: ${theme.colors.primary};
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: ${theme.spacing.md} 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+// const Header = styled.header`
+//     background: ${theme.colors.primary};
+//     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+//     padding: ${theme.spacing.md} 0;
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     z-index: 1000;
 
-    @media print {
-        display: none;
-    }
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -20px;
-        left: 0;
-        right: 0;
-        height: 20px;
-        background: linear-gradient(
-            to bottom,
-            ${theme.colors.primary},
-            transparent
-        );
-    }
-`;
+//     @media print {
+//         display: none;
+//     }
+//     &::after {
+//         content: '';
+//         position: absolute;
+//         bottom: -20px;
+//         left: 0;
+//         right: 0;
+//         height: 20px;
+//         background: linear-gradient(
+//             to bottom,
+//             ${theme.colors.primary},
+//             transparent
+//         );
+//     }
+// `;
 
-const Nav = styled.nav`
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 ${theme.spacing.md};
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 90%;
-    }
-`;
+// const Nav = styled.nav`
+//     .container {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         padding: 0 ${theme.spacing.md};
+//         max-width: 1200px;
+//         margin: 0 auto;
+//         width: 90%;
+//     }
+// `;
 
-const Logo = styled(motion.div)`
-    color: ${theme.colors.accent};
-    font-family: ${theme.fonts.heading};
-    font-size: 1.5rem;
-    font-weight: 700;
-`;
+// const Logo = styled(motion.div)`
+//     color: ${theme.colors.accent};
+//     font-family: ${theme.fonts.heading};
+//     font-size: 1.5rem;
+//     font-weight: 700;
+// `;
 
-const NavLinks = styled.div`
-    display: flex;
-    gap: ${theme.spacing.lg};
+// const NavLinks = styled.div`
+//     display: flex;
+//     gap: ${theme.spacing.lg};
 
-    a {
-        color: ${theme.colors.textLight};
-        transition: all ${theme.transitions.default};
-        font-weight: 500;
-        padding: ${theme.spacing.xs} ${theme.spacing.sm};
-        border-radius: 4px;
+//     a {
+//         color: ${theme.colors.textLight};
+//         transition: all ${theme.transitions.default};
+//         font-weight: 500;
+//         padding: ${theme.spacing.xs} ${theme.spacing.sm};
+//         border-radius: 4px;
 
-        &:hover {
-            color: ${theme.colors.light};
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    }
+//         &:hover {
+//             color: ${theme.colors.light};
+//             background-color: rgba(255, 255, 255, 0.1);
+//         }
+//     }
 
-    @media (max-width: ${theme.breakpoints.sm}) {
-        gap: ${theme.spacing.md};
-    }
-`;
+//     @media (max-width: ${theme.breakpoints.sm}) {
+//         gap: ${theme.spacing.md};
+//     }
+// `;
 
 const Main = styled.main<{ isProjectDetail?: boolean }>`
     flex: 1;
