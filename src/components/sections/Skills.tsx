@@ -1,14 +1,9 @@
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import { theme } from '../../styles/theme';
-import {
-    FaReact,
-    FaNodeJs,
-    FaDatabase,
-    FaDocker,
-    FaGitAlt,
-    FaAws,
-} from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaDocker, FaGitAlt } from 'react-icons/fa';
+import { IoLogoVercel } from 'react-icons/io5';
+import { SiPostman } from 'react-icons/si';
 import {
     SiTypescript,
     SiJavascript,
@@ -234,13 +229,13 @@ const skillCategories = [
         ],
     },
     {
-        title: 'DevOps',
+        title: 'Tools',
         icon: <FaDocker />,
         skills: [
             { name: 'Docker', icon: <FaDocker /> },
             { name: 'Git', icon: <FaGitAlt /> },
-            { name: 'AWS', icon: <FaAws /> },
-            { name: 'CI/CD', icon: <FaDatabase /> },
+            { name: 'Vercel', icon: <IoLogoVercel /> },
+            { name: 'Postman', icon: <SiPostman /> },
         ],
     },
 ];
