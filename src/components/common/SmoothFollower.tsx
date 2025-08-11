@@ -24,6 +24,7 @@ const DotCursor = styled.div<{ isClicking: boolean }>`
     height: ${(props) => (props.isClicking ? '16px' : '8px')};
     transform: translate(-50%, -50%);
     transition: width 0.2s, height 0.2s;
+    z-index: 51; // Ensure dot is above the border
 `;
 
 const BorderCursor = styled.div<{ isHovering: boolean }>`
@@ -54,8 +55,7 @@ export default function SmoothFollower() {
     const [isClicking, setIsClicking] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
 
-    const DOT_SMOOTHNESS = 0.2;
-    const BORDER_DOT_SMOOTHNESS = 0.1;
+    const BORDER_DOT_SMOOTHNESS = 0.15; // Faster outer border following
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -87,17 +87,10 @@ export default function SmoothFollower() {
                 return start + (end - start) * factor;
             };
 
-            dotPosition.current.x = lerp(
-                dotPosition.current.x,
-                mousePosition.current.x,
-                DOT_SMOOTHNESS
-            );
-            dotPosition.current.y = lerp(
-                dotPosition.current.y,
-                mousePosition.current.y,
-                DOT_SMOOTHNESS
-            );
+            // Inner dot follows the mouse position directly
+            dotPosition.current = mousePosition.current;
 
+            // Border follows the dot position with smoothing
             borderDotPosition.current.x = lerp(
                 borderDotPosition.current.x,
                 mousePosition.current.x,
