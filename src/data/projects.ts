@@ -20,6 +20,28 @@ interface Project {
 export const projects: Project[] = [
     {
         id: 1,
+        title: 'SyCip Builders',
+        description:
+            'A premium residential construction company website that showcases luxury home projects in Metro Manila. The site features elegant design and seamless user experience to highlight their bespoke designs and exceptional craftsmanship in boutique residential projects.',
+        image: syCipImg,
+        techStack: ['Webflow'],
+        githubUrl: 'no-link',
+        liveUrl: 'https://www.sycipbuilders.com/',
+    },
+
+    {
+        id: 2,
+        title: 'Filheim',
+        description:
+            'A bespoke cabinetry website built with Next.js and Strapi, designed for a premium woodworking brand. Features a modern, responsive interface and an easy-to-manage content system for showcasing custom furniture.',
+        image: filheimImg,
+        techStack: ['Next.js', 'Strapi', 'Tailwind CSS', 'React'],
+        githubUrl: 'https://github.com/jakebasa/filheim-cms',
+        liveUrl: 'https://www.filheim.com/',
+    },
+
+    {
+        id: 3,
         title: 'Eucorp',
         description:
             'This AI-powered institutional planning system, which streamlines academic management through automated report generation, is now being used by Manuel S. Enverga University Foundation. The system intelligently evaluates institutional goals and objectives, automatically generating comprehensive reports to track progress and identify areas that need attention.',
@@ -33,26 +55,6 @@ export const projects: Project[] = [
         ],
         githubUrl: 'https://github.com/carlotesoro2003/EuCorp',
         liveUrl: 'https://eucorp.vercel.app/',
-    },
-    {
-        id: 2,
-        title: 'Filheim',
-        description:
-            'A bespoke cabinetry website built with Next.js and Strapi, designed for a premium woodworking brand. Features a modern, responsive interface and an easy-to-manage content system for showcasing custom furniture.',
-        image: filheimImg,
-        techStack: ['Next.js', 'Strapi', 'Tailwind CSS', 'React'],
-        githubUrl: 'https://github.com/jakebasa/filheim-cms',
-        liveUrl: 'https://www.filheim.com/',
-    },
-    {
-        id: 3,
-        title: 'SyCip Builders',
-        description:
-            'A premium residential construction company website that showcases luxury home projects in Metro Manila. The site features elegant design and seamless user experience to highlight their bespoke designs and exceptional craftsmanship in boutique residential projects.',
-        image: syCipImg,
-        techStack: ['Webflow'],
-        githubUrl: 'no-link',
-        liveUrl: 'https://www.sycipbuilders.com/',
     },
     {
         id: 4,
