@@ -17,6 +17,7 @@ import 'ldrs/react/DotWave.css';
 import Projects from './components/sections/Projects';
 import Skills from './components/sections/Skills';
 import Contact from './components/sections/Contact';
+import About from './components/sections/About';
 
 // Loading fallback component
 const LoadingFallback = styled.div`
@@ -43,6 +44,7 @@ function HomePage() {
             <Hero />
             <div style={{ position: 'relative', zIndex: 1 }}>
                 <ErrorBoundary>
+                    <About />
                     <Projects />
                     <Skills />
                     <Contact />

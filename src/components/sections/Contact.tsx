@@ -73,8 +73,14 @@ const ContactText = styled(motion.p)`
     font-size: clamp(1rem, 2vw, 1.3rem);
     margin-bottom: ${theme.spacing.lg};
     color: ${theme.colors.textLight};
-    line-height: 1.8;
-    opacity: 0.9;
+    line-height: 1.6;
+    opacity: 0.95;
+    max-width: 500px;
+    margin-inline: auto;
+
+    strong {
+        color: ${theme.colors.accent};
+    }
 
     @media (min-width: ${theme.breakpoints.md}) {
         margin-bottom: ${theme.spacing.xl};
@@ -94,10 +100,8 @@ const ContactEmail = styled(motion.a)`
     font-weight: 500;
     background: ${theme.colors.gradient.accent};
     border: none;
-    word-break: break-all;
 
     @media (min-width: ${theme.breakpoints.sm}) {
-        word-break: normal;
         padding: ${theme.spacing.md} ${theme.spacing.lg};
     }
 
@@ -198,21 +202,22 @@ const Contact = () => {
                         role='heading'
                         aria-level={2}
                     >
-                        Get In Touch
+                        Let’s Work Together
                     </SectionTitle>
                     <ContactContent role='article'>
                         <ContactText variants={itemVariants} role='paragraph'>
-                            Let’s connect and create something impactful.
+                            Have an idea or project in mind?{' '}
+                            <strong>Let’s build it</strong> together.
                         </ContactText>
                         <ContactEmail
                             href='mailto:jakebasa0428@gmail.com'
                             variants={itemVariants}
-                            whileHover={{ scale: 1.05 }}
+                            whileHover={{ scale: 1.07 }}
                             whileTap={{ scale: 0.95 }}
-                            aria-label='Send me an email at your.email@example.com'
+                            aria-label='Send me an email at jakebasa0428@gmail.com'
                         >
                             <FaEnvelope aria-hidden='true' />
-                            <span>Say Hello</span>
+                            <span>Get in Touch</span>
                         </ContactEmail>
                         <SocialLinks
                             variants={itemVariants}
@@ -225,10 +230,9 @@ const Contact = () => {
                                 rel='noopener noreferrer'
                                 whileHover={{ y: -5 }}
                                 role='listitem'
-                                aria-label='Visit my GitHub profile'
+                                aria-label='View my GitHub'
                             >
                                 <FaGithub aria-hidden='true' />
-                                <span className='sr-only'>GitHub</span>
                             </SocialLink>
                             <SocialLink
                                 href='https://www.linkedin.com/in/jake-basa-3119b9379/'
@@ -236,22 +240,10 @@ const Contact = () => {
                                 rel='noopener noreferrer'
                                 whileHover={{ y: -5 }}
                                 role='listitem'
-                                aria-label='Connect with me on LinkedIn'
+                                aria-label='Connect on LinkedIn'
                             >
                                 <FaLinkedin aria-hidden='true' />
-                                <span className='sr-only'>LinkedIn</span>
                             </SocialLink>
-                            {/* <SocialLink
-                                href='https://twitter.com'
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                whileHover={{ y: -5 }}
-                                role='listitem'
-                                aria-label='Follow me on Twitter'
-                            >
-                                <FaTwitter aria-hidden='true' />
-                                <span className='sr-only'>Twitter</span>
-                            </SocialLink> */}
                         </SocialLinks>
                     </ContactContent>
                 </motion.div>

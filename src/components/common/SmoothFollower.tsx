@@ -6,7 +6,7 @@ const CursorWrapper = styled.div<{ isVisible: boolean }>`
     pointer-events: none;
     position: fixed;
     inset: 0;
-    z-index: 50;
+    z-index: 9999999;
     opacity: ${(props) => (props.isVisible ? 1 : 0)};
     transition: opacity 0.3s ease-out;
 
@@ -74,7 +74,7 @@ export default function SmoothFollower() {
         window.addEventListener('mouseup', handleMouseUp);
 
         const interactiveElements = document.querySelectorAll(
-            'a, button, img, input, textarea, select'
+            'a, button, img, input, textarea, select, [role="button"]'
         );
         interactiveElements.forEach((element) => {
             element.addEventListener('mouseenter', handleMouseEnter);

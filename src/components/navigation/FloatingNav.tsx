@@ -8,22 +8,31 @@ const NavContainer = styled(motion.nav)`
     right: ${theme.spacing.lg};
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 49; /* just below the cursor */
+
     display: flex;
     flex-direction: column;
     gap: ${theme.spacing.md};
+    padding: ${theme.spacing.sm};
+    pointer-events: auto;
 
-    @media print {
+    @media (hover: none) and (pointer: coarse),
+        (max-width: ${theme.breakpoints.sm}) {
         display: none;
     }
 
-    @media (max-width: ${theme.breakpoints.sm}) {
-        display: none;
-    }
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
-    @media (max-height: 500px) {
-        gap: ${theme.spacing.sm};
-        padding: ${theme.spacing.sm};
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
     }
 `;
 
@@ -96,6 +105,7 @@ const NavDot = styled(motion.button)<{ active: boolean }>`
         opacity: 0;
         pointer-events: none;
         transition: all ${theme.transitions.default};
+        z-index: 1;
         color: ${theme.colors.text};
         font-weight: 500;
 
@@ -147,6 +157,7 @@ const ProgressBar = styled(motion.div)`
 
 const sections = [
     { id: 'hero', name: 'Home' },
+    { id: 'about', name: 'About' },
     { id: 'projects', name: 'Projects' },
     { id: 'skills', name: 'Skills' },
     { id: 'contact', name: 'Contact' },
