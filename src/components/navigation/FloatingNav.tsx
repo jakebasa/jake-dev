@@ -35,7 +35,6 @@ const NavDot = styled(motion.button)<{ active: boolean }>`
     border: 2px solid
         ${(props) =>
             props.active ? theme.colors.accent : 'rgba(0, 0, 0, 0.2)'};
-
     position: relative;
     transition: all ${theme.transitions.default};
     padding: 0;
@@ -152,7 +151,7 @@ const sections = [
     { id: 'contact', name: 'Contact' },
 ];
 
-// Utility function to animate smooth scroll with framer-motion
+// Smooth scroll with framer-motion
 const smoothScrollTo = (targetY: number) => {
     const start = window.scrollY || window.pageYOffset;
     animate(start, targetY, {
@@ -201,13 +200,17 @@ export const FloatingNav = () => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             const element = document.getElementById(sectionId);
-            if (element) smoothScrollTo(element.offsetTop);
+            if (element) {
+                const targetY =
+                    element.getBoundingClientRect().top + window.scrollY;
+                smoothScrollTo(targetY);
+            }
         } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
             e.preventDefault();
             const currentIndex = sections.findIndex(
                 ({ id }) => id === sectionId
             );
-            if (currentIndex === -1) return; // safety check
+            if (currentIndex === -1) return;
 
             let nextIndex = currentIndex;
             if (e.key === 'ArrowUp') {
@@ -222,7 +225,11 @@ export const FloatingNav = () => {
             if (nextIndex !== currentIndex) {
                 const nextSection = sections[nextIndex];
                 const element = document.getElementById(nextSection.id);
-                if (element) smoothScrollTo(element.offsetTop);
+                if (element) {
+                    const targetY =
+                        element.getBoundingClientRect().top + window.scrollY;
+                    smoothScrollTo(targetY);
+                }
             }
         }
     };
@@ -250,7 +257,12 @@ export const FloatingNav = () => {
                         active={activeSection === id}
                         onClick={() => {
                             const element = document.getElementById(id);
-                            if (element) smoothScrollTo(element.offsetTop);
+                            if (element) {
+                                const targetY =
+                                    element.getBoundingClientRect().top +
+                                    window.scrollY;
+                                smoothScrollTo(targetY);
+                            }
                         }}
                         onKeyDown={(e) => handleKeyDown(e, id)}
                         data-tooltip={name}
