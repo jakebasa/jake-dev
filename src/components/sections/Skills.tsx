@@ -260,6 +260,7 @@ const techIcons = [
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg',
     'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
+    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
 ];
 
 const Skills = () => {
