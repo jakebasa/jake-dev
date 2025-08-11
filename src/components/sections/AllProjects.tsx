@@ -44,7 +44,6 @@ const BackButton = styled(motion.button)`
     border: none;
     color: ${theme.colors.accent};
     font-size: 1.1rem;
-    cursor: pointer;
     padding: ${theme.spacing.sm};
     margin-bottom: ${theme.spacing.xl};
     transition: all ${theme.transitions.default};
@@ -185,7 +184,6 @@ const ViewProjectButton = styled.button`
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
-    cursor: pointer;
     transition: all ${theme.transitions.default};
     margin-left: auto;
     white-space: nowrap;
@@ -218,7 +216,6 @@ const BackToTopButton = styled(motion.button)`
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     z-index: 1000;
 

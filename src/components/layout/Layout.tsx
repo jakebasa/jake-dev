@@ -4,6 +4,7 @@ import { theme } from '../../styles/theme';
 import { FloatingNav } from '../navigation/FloatingNav';
 import { useKeyboardNavigation } from '../../hooks/useKeyboardNavigation';
 import { useLocation } from 'react-router-dom';
+import SmoothFollower from '../common/SmoothFollower';
 
 interface LayoutProps {
     children: ReactNode;
@@ -190,6 +191,7 @@ export default function Layout({ children }: LayoutProps) {
 
     return (
         <LayoutWrapper>
+            <SmoothFollower />
             {!isProjectDetail && (
                 <SkipLink href='#main-content'>Skip to main content</SkipLink>
             )}

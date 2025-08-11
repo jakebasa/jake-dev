@@ -12,11 +12,16 @@ const globalStyles = css`
         box-sizing: border-box;
     }
 
+    * {
+        cursor: none !important;
+    }
+
     html {
         scroll-behavior: smooth;
         font-size: 16px;
         overflow-x: hidden;
         width: 100%;
+        cursor: none;
     }
 
     body {
@@ -82,13 +87,18 @@ const globalStyles = css`
     a {
         color: inherit;
         text-decoration: none;
+        cursor: none;
     }
 
     button {
-        cursor: pointer;
         border: none;
         background: none;
         font-family: inherit;
+        cursor: none;
+    }
+
+    a, button, input[type="submit"], input[type="button"], select {
+        cursor: none !important;
     }
 
     img {

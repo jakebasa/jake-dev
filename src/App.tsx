@@ -6,16 +6,17 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import { ThemeProvider } from '@emotion/react';
 import { theme } from './styles/theme';
 import styled from '@emotion/styled';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 import { DotWave } from 'ldrs/react';
 import 'ldrs/react/DotWave.css';
 
 // Default values shown
 
-// Lazy load non-critical components
-const Projects = lazy(() => import('./components/sections/Projects'));
-const Skills = lazy(() => import('./components/sections/Skills'));
-const Contact = lazy(() => import('./components/sections/Contact'));
+// Import components directly for homepage
+import Projects from './components/sections/Projects';
+import Skills from './components/sections/Skills';
+import Contact from './components/sections/Contact';
 
 // Loading fallback component
 const LoadingFallback = styled.div`
@@ -39,37 +40,14 @@ const AllProjects = lazy(() => import('./components/sections/AllProjects'));
 function HomePage() {
     return (
         <Layout>
-            {/* Hero section is critical for LCP, so keep it eager loaded */}
             <Hero />
-
-            {/* Wrap non-critical sections in Suspense */}
-            <Suspense
-                fallback={
-                    <LoadingFallback>
-                        <DotWave size='47' speed='1' color='crimson' />
-                    </LoadingFallback>
-                }
-            >
-                <Projects />
-            </Suspense>
-            <Suspense
-                fallback={
-                    <LoadingFallback>
-                        <DotWave size='47' speed='1' color='crimson' />
-                    </LoadingFallback>
-                }
-            >
-                <Skills />
-            </Suspense>
-            <Suspense
-                fallback={
-                    <LoadingFallback>
-                        <DotWave size='47' speed='1' color='crimson' />
-                    </LoadingFallback>
-                }
-            >
-                <Contact />
-            </Suspense>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+                <ErrorBoundary>
+                    <Projects />
+                    <Skills />
+                    <Contact />
+                </ErrorBoundary>
+            </div>
         </Layout>
     );
 }

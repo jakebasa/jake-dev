@@ -189,7 +189,6 @@ const ViewProjectButton = styled.button`
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    cursor: pointer;
     transition: all ${theme.transitions.default};
     margin-left: auto;
 
@@ -207,7 +206,6 @@ const ViewAllButton = styled(motion.button)`
     border-radius: 30px;
     font-size: 1rem;
     font-weight: 500;
-    cursor: pointer;
     transition: all ${theme.transitions.default};
     margin: ${theme.spacing.xl} auto 0;
     display: block;
@@ -224,6 +222,7 @@ const ViewAllButton = styled(motion.button)`
 import { featuredProjects } from '../../data/projects';
 
 const Projects = () => {
+    console.log('Projects component mounted');
     const navigate = useNavigate();
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -255,8 +254,7 @@ const Projects = () => {
             <div className='container'>
                 <SectionTitle
                     initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     role='heading'
                     aria-level={2}
@@ -266,8 +264,7 @@ const Projects = () => {
                 <motion.div
                     variants={containerVariants}
                     initial='hidden'
-                    whileInView='visible'
-                    viewport={{ once: true }}
+                    animate='visible'
                 >
                     <ProjectGrid role='list'>
                         {featuredProjects.map((project) => (
@@ -353,8 +350,7 @@ const Projects = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
+                        animate={{ opacity: 1 }}
                         transition={{ duration: 0.5 }}
                         aria-label='View all projects'
                     >

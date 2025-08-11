@@ -35,7 +35,7 @@ const NavDot = styled(motion.button)<{ active: boolean }>`
     border: 2px solid
         ${(props) =>
             props.active ? theme.colors.accent : 'rgba(0, 0, 0, 0.2)'};
-    cursor: pointer;
+
     position: relative;
     transition: all ${theme.transitions.default};
     padding: 0;

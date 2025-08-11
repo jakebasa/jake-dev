@@ -23,7 +23,7 @@ const BackButton = styled(motion.button)`
     border: none;
     color: ${theme.colors.accent};
     font-size: 1.1rem;
-    cursor: pointer;
+
     padding: ${theme.spacing.sm};
     margin-bottom: ${theme.spacing.xl};
     transition: all ${theme.transitions.default};
