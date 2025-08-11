@@ -153,13 +153,16 @@ const ProjectDetail = () => {
                     </TechStack>
 
                     <ProjectLinks>
-                        <a
-                            href={foundProject.githubUrl}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            <FaGithub /> View Source
-                        </a>
+                        {foundProject.githubUrl !== 'no-link' && (
+                            <a
+                                href={foundProject.githubUrl}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                            >
+                                <FaGithub /> View Source
+                            </a>
+                        )}
+
                         {foundProject.liveUrl !== 'no-link' && (
                             <a
                                 href={foundProject.liveUrl}
