@@ -81,7 +81,8 @@ const NavDot = styled(motion.button)<{ active: boolean }>`
 
     &:focus {
         outline: none;
-        border-color: ${theme.colors.accent};
+        border-color: ${(props) =>
+            props.active ? theme.colors.accent : 'rgba(0, 0, 0, 0.2)'};
     }
 
     &::before {
@@ -201,6 +202,7 @@ export const FloatingNav = () => {
             e.preventDefault();
             const element = document.getElementById(sectionId);
             if (element) {
+                setActiveSection(sectionId);
                 const targetY =
                     element.getBoundingClientRect().top + window.scrollY;
                 smoothScrollTo(targetY);
@@ -226,6 +228,7 @@ export const FloatingNav = () => {
                 const nextSection = sections[nextIndex];
                 const element = document.getElementById(nextSection.id);
                 if (element) {
+                    setActiveSection(nextSection.id);
                     const targetY =
                         element.getBoundingClientRect().top + window.scrollY;
                     smoothScrollTo(targetY);
@@ -255,7 +258,9 @@ export const FloatingNav = () => {
                     <NavDot
                         key={id}
                         active={activeSection === id}
-                        onClick={() => {
+                        onClick={(e) => {
+                            e.currentTarget.blur(); // remove focus to avoid stuck highlight
+                            setActiveSection(id); // instantly update
                             const element = document.getElementById(id);
                             if (element) {
                                 const targetY =
