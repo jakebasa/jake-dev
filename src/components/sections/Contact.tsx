@@ -235,7 +235,7 @@ const Contact = () => {
                                 <FaGithub aria-hidden='true' />
                             </SocialLink>
                             <SocialLink
-                                href='https://www.linkedin.com/in/jake-basa-3119b9379/'
+                                href='https://www.linkedin.com/in/jakebasa/'
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 whileHover={{ y: -5 }}

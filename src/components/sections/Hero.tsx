@@ -266,7 +266,7 @@ export const Hero = () => {
                     </Suspense>
                 </a>
                 <a
-                    href='https://www.linkedin.com/in/jake-basa-3119b9379/'
+                    href='https://www.linkedin.com/in/jakebasa/'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
