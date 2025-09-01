@@ -89,12 +89,8 @@ const ProjectImage = styled.div<{ imageUrl: string }>`
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 40%;
-        background: linear-gradient(
-            to top,
-            ${theme.colors.secondary},
-            transparent
-        );
+        height: 20%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
     }
 `;
 
