@@ -35,7 +35,7 @@ export const projects: Project[] = [
             'Tailwind CSS',
         ],
         githubUrl: 'https://github.com/jakebasa/memora-journal-app',
-        liveUrl: 'no-link',
+        liveUrl: 'https://memora-journal-app.onrender.com',
     },
     {
         id: 2,
