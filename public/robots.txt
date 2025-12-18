@@ -1,0 +1,15 @@
+# robots.txt for Jake Basa Portfolio
+# https://jake-dev.vercel.app/
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of build artifacts and source maps
+Disallow: /*.map$
+
+# Sitemap location
+# Sitemap: https://jake-dev.vercel.app/sitemap.xml
+
+# Crawl-delay 
+# Crawl-delay: 1
