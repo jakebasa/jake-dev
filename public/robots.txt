@@ -9,7 +9,7 @@ Allow: /
 Disallow: /*.map$
 
 # Sitemap location
-# Sitemap: https://jake-dev.vercel.app/sitemap.xml
+Sitemap: https://jake-dev.vercel.app/sitemap.xml
 
 # Crawl-delay 
 # Crawl-delay: 1
